@@ -1,0 +1,35 @@
+name: my_env
+channels:
+  - conda-forge
+dependencies:
+  - bzip2=1.0.8=h99b78c6_7
+  - ca-certificates=2024.12.14=hf0a4a13_0
+  - libblas=3.9.0=26_osxarm64_openblas
+  - libcblas=3.9.0=26_osxarm64_openblas
+  - libcxx=19.1.7=ha82da77_0
+  - libexpat=2.6.4=h286801f_0
+  - libffi=3.4.2=h3422bc3_5
+  - libgfortran=5.0.0=13_2_0_hd922786_3
+  - libgfortran5=13.2.0=hf226fd6_3
+  - liblapack=3.9.0=26_osxarm64_openblas
+  - liblzma=5.6.3=h39f12f2_1
+  - libmpdec=4.0.0=h99b78c6_0
+  - libopenblas=0.3.28=openmp_hf332438_1
+  - libsqlite=3.48.0=h3f77e49_1
+  - libzlib=1.3.1=h8359307_2
+  - llvm-openmp=19.1.7=hdb05f8b_0
+  - ncurses=6.5=h5e97a16_2
+  - numpy=2.2.2=py313h41a2e72_0
+  - openssl=3.4.0=h81ee809_1
+  - pandas=2.2.3=py313h47b39a6_1
+  - pip=24.3.1=pyh145f28c_2
+  - python=3.13.1=h4f43103_105_cp313
+  - python-dateutil=2.9.0.post0=pyhff2d567_1
+  - python-tzdata=2025.1=pyhd8ed1ab_0
+  - python_abi=3.13=5_cp313
+  - pytz=2024.1=pyhd8ed1ab_0
+  - readline=8.2=h92ec313_1
+  - six=1.17.0=pyhd8ed1ab_0
+  - tk=8.6.13=h5083fa2_1
+  - tzdata=2025a=h78e105d_0
+prefix: /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
