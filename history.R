@@ -1,0 +1,5 @@
+install.packages('renv')
+#renv::init()
+library(renv)
+init()
+install.packages("tidyverse")

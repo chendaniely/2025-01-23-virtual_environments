@@ -1,0 +1,712 @@
+danielchen@dhcp-128-189-142-254$ cd git
+12:39:23 (3.12.6) ~/git
+danielchen@dhcp-128-189-142-254$ git clone git@github.com:chendaniely/2025-01-23-virtual_environments.git
+Cloning into '2025-01-23-virtual_environments'...
+Enter passphrase for key '/Users/danielchen/.ssh/id_rsa':
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (5/5), done.
+
+12:39:59 (miniforge3-latest) ~/git
+danielchen@dhcp-128-189-142-254$ conda activate base
+12:40:03 (miniforge3-latest) ~/git
+danielchen@dhcp-128-189-142-254$
+12:40:03 (miniforge3-latest) ~/git
+danielchen@dhcp-128-189-142-254$ cd 2025-01-23-virtual_environments
+12:40:15 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda info
+
+     active environment : base
+    active env location : /Users/danielchen/.pyenv/versions/miniforge3-latest
+            shell level : 1
+       user config file : /Users/danielchen/.condarc
+ populated config files : /Users/danielchen/.pyenv/versions/miniforge3-latest/.condarc
+                          /Users/danielchen/.condarc
+          conda version : 25.1.0
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=m1
+                          __conda=25.1.0=0
+                          __osx=15.2=0
+                          __unix=0=0
+       base environment : /Users/danielchen/.pyenv/versions/miniforge3-latest  (writable)
+      conda av data dir : /Users/danielchen/.pyenv/versions/miniforge3-latest/etc/conda
+  conda av metadata url : None
+           channel URLs : https://conda.anaconda.org/conda-forge/osx-arm64
+                          https://conda.anaconda.org/conda-forge/noarch
+          package cache : /Users/danielchen/.pyenv/versions/miniforge3-latest/pkgs
+                          /Users/danielchen/.conda/pkgs
+       envs directories : /Users/danielchen/.pyenv/versions/miniforge3-latest/envs
+                          /Users/danielchen/.conda/envs
+               platform : osx-arm64
+             user-agent : conda/25.1.0 requests/2.32.3 CPython/3.12.7 Darwin/24.2.0 OSX/15.2 solver/libmamba conda-libmamba-solver/25.1.0 libmambapy/2.0.5
+                UID:GID : 501:20
+             netrc file : None
+           offline mode : False
+
+12:41:42 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python
+Python 3.12.7 | packaged by conda-forge | (main, Oct  4 2024, 15:57:01) [Clang 17.0.6 ] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'pandas'
+>>> exit()
+12:43:11 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python --version
+Python 3.12.7
+12:46:12 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ which conda
+conda () {
+	\local cmd="${1-__missing__}"
+	case "$cmd" in
+		(activate | deactivate) __conda_activate "$@" ;;
+		(install | update | upgrade | remove | uninstall) __conda_exe "$@" || \return
+			__conda_activate reactivate ;;
+		(*) __conda_exe "$@" ;;
+	esac
+}
+12:46:34 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ which python
+/Users/danielchen/.pyenv/versions/miniforge3-latest/bin/python
+12:47:02 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda create --name my_env python=3.13
+Channels:
+ - conda-forge
+Platform: osx-arm64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+
+  added / updated specs:
+    - python=3.13
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    libmpdec-4.0.0             |       h99b78c6_0          68 KB  conda-forge
+    pip-24.3.1                 |     pyh145f28c_2         1.2 MB  conda-forge
+    python-3.13.1              |h4f43103_105_cp313        12.3 MB  conda-forge
+    python_abi-3.13            |          5_cp313           6 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        13.6 MB
+
+The following NEW packages will be INSTALLED:
+
+  bzip2              conda-forge/osx-arm64::bzip2-1.0.8-h99b78c6_7
+  ca-certificates    conda-forge/osx-arm64::ca-certificates-2024.12.14-hf0a4a13_0
+  libexpat           conda-forge/osx-arm64::libexpat-2.6.4-h286801f_0
+  libffi             conda-forge/osx-arm64::libffi-3.4.2-h3422bc3_5
+  liblzma            conda-forge/osx-arm64::liblzma-5.6.3-h39f12f2_1
+  libmpdec           conda-forge/osx-arm64::libmpdec-4.0.0-h99b78c6_0
+  libsqlite          conda-forge/osx-arm64::libsqlite-3.48.0-h3f77e49_1
+  libzlib            conda-forge/osx-arm64::libzlib-1.3.1-h8359307_2
+  ncurses            conda-forge/osx-arm64::ncurses-6.5-h5e97a16_2
+  openssl            conda-forge/osx-arm64::openssl-3.4.0-h81ee809_1
+  pip                conda-forge/noarch::pip-24.3.1-pyh145f28c_2
+  python             conda-forge/osx-arm64::python-3.13.1-h4f43103_105_cp313
+  python_abi         conda-forge/osx-arm64::python_abi-3.13-5_cp313
+  readline           conda-forge/osx-arm64::readline-8.2-h92ec313_1
+  tk                 conda-forge/osx-arm64::tk-8.6.13-h5083fa2_1
+  tzdata             conda-forge/noarch::tzdata-2025a-h78e105d_0
+
+
+Proceed ([y]/n)?
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate my_env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+12:49:45 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda activate my_env
+12:51:16 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda info
+
+     active environment : my_env
+    active env location : /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+            shell level : 2
+       user config file : /Users/danielchen/.condarc
+ populated config files : /Users/danielchen/.pyenv/versions/miniforge3-latest/.condarc
+                          /Users/danielchen/.condarc
+          conda version : 25.1.0
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=m1
+                          __conda=25.1.0=0
+                          __osx=15.2=0
+                          __unix=0=0
+       base environment : /Users/danielchen/.pyenv/versions/miniforge3-latest  (writable)
+      conda av data dir : /Users/danielchen/.pyenv/versions/miniforge3-latest/etc/conda
+  conda av metadata url : None
+           channel URLs : https://conda.anaconda.org/conda-forge/osx-arm64
+                          https://conda.anaconda.org/conda-forge/noarch
+          package cache : /Users/danielchen/.pyenv/versions/miniforge3-latest/pkgs
+                          /Users/danielchen/.conda/pkgs
+       envs directories : /Users/danielchen/.pyenv/versions/miniforge3-latest/envs
+                          /Users/danielchen/.conda/envs
+               platform : osx-arm64
+             user-agent : conda/25.1.0 requests/2.32.3 CPython/3.12.7 Darwin/24.2.0 OSX/15.2 solver/libmamba conda-libmamba-solver/25.1.0 libmambapy/2.0.5
+                UID:GID : 501:20
+             netrc file : None
+           offline mode : False
+
+12:51:33 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ which python
+/Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env/bin/python
+12:51:56 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python --version
+Python 3.13.1
+12:53:12 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python
+Python 3.13.1 | packaged by conda-forge | (main, Jan 13 2025, 09:45:31) [Clang 18.1.8 ] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+Traceback (most recent call last):
+  File "<python-input-0>", line 1, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+>>> exit()
+12:54:15 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda install pandas
+Channels:
+ - conda-forge
+Platform: osx-arm64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+
+  added / updated specs:
+    - pandas
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    libblas-3.9.0              |26_osxarm64_openblas          16 KB  conda-forge
+    libcblas-3.9.0             |26_osxarm64_openblas          16 KB  conda-forge
+    liblapack-3.9.0            |26_osxarm64_openblas          16 KB  conda-forge
+    libopenblas-0.3.28         |openmp_hf332438_1         4.0 MB  conda-forge
+    llvm-openmp-19.1.7         |       hdb05f8b_0         274 KB  conda-forge
+    numpy-2.2.2                |  py313h41a2e72_0         6.2 MB  conda-forge
+    pandas-2.2.3               |  py313h47b39a6_1        13.8 MB  conda-forge
+    python-dateutil-2.9.0.post0|     pyhff2d567_1         217 KB  conda-forge
+    python-tzdata-2025.1       |     pyhd8ed1ab_0         140 KB  conda-forge
+    six-1.17.0                 |     pyhd8ed1ab_0          16 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        24.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  libblas            conda-forge/osx-arm64::libblas-3.9.0-26_osxarm64_openblas
+  libcblas           conda-forge/osx-arm64::libcblas-3.9.0-26_osxarm64_openblas
+  libcxx             conda-forge/osx-arm64::libcxx-19.1.7-ha82da77_0
+  libgfortran        conda-forge/osx-arm64::libgfortran-5.0.0-13_2_0_hd922786_3
+  libgfortran5       conda-forge/osx-arm64::libgfortran5-13.2.0-hf226fd6_3
+  liblapack          conda-forge/osx-arm64::liblapack-3.9.0-26_osxarm64_openblas
+  libopenblas        conda-forge/osx-arm64::libopenblas-0.3.28-openmp_hf332438_1
+  llvm-openmp        conda-forge/osx-arm64::llvm-openmp-19.1.7-hdb05f8b_0
+  numpy              conda-forge/osx-arm64::numpy-2.2.2-py313h41a2e72_0
+  pandas             conda-forge/osx-arm64::pandas-2.2.3-py313h47b39a6_1
+  python-dateutil    conda-forge/noarch::python-dateutil-2.9.0.post0-pyhff2d567_1
+  python-tzdata      conda-forge/noarch::python-tzdata-2025.1-pyhd8ed1ab_0
+  pytz               conda-forge/noarch::pytz-2024.1-pyhd8ed1ab_0
+  six                conda-forge/noarch::six-1.17.0-pyhd8ed1ab_0
+
+
+Proceed ([y]/n)?
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+12:54:41 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python --version
+Python 3.13.1
+12:55:46 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda info
+
+     active environment : my_env
+    active env location : /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+            shell level : 2
+       user config file : /Users/danielchen/.condarc
+ populated config files : /Users/danielchen/.pyenv/versions/miniforge3-latest/.condarc
+                          /Users/danielchen/.condarc
+          conda version : 25.1.0
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=m1
+                          __conda=25.1.0=0
+                          __osx=15.2=0
+                          __unix=0=0
+       base environment : /Users/danielchen/.pyenv/versions/miniforge3-latest  (writable)
+      conda av data dir : /Users/danielchen/.pyenv/versions/miniforge3-latest/etc/conda
+  conda av metadata url : None
+           channel URLs : https://conda.anaconda.org/conda-forge/osx-arm64
+                          https://conda.anaconda.org/conda-forge/noarch
+          package cache : /Users/danielchen/.pyenv/versions/miniforge3-latest/pkgs
+                          /Users/danielchen/.conda/pkgs
+       envs directories : /Users/danielchen/.pyenv/versions/miniforge3-latest/envs
+                          /Users/danielchen/.conda/envs
+               platform : osx-arm64
+             user-agent : conda/25.1.0 requests/2.32.3 CPython/3.12.7 Darwin/24.2.0 OSX/15.2 solver/libmamba conda-libmamba-solver/25.1.0 libmambapy/2.0.5
+                UID:GID : 501:20
+             netrc file : None
+           offline mode : False
+
+12:55:53 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python
+Python 3.13.1 | packaged by conda-forge | (main, Jan 13 2025, 09:45:31) [Clang 18.1.8 ] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> exit()
+12:56:32 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda list
+# packages in environment at /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env:
+#
+# Name                    Version                   Build  Channel
+bzip2                     1.0.8                h99b78c6_7    conda-forge
+ca-certificates           2024.12.14           hf0a4a13_0    conda-forge
+libblas                   3.9.0           26_osxarm64_openblas    conda-forge
+libcblas                  3.9.0           26_osxarm64_openblas    conda-forge
+libcxx                    19.1.7               ha82da77_0    conda-forge
+libexpat                  2.6.4                h286801f_0    conda-forge
+libffi                    3.4.2                h3422bc3_5    conda-forge
+libgfortran               5.0.0           13_2_0_hd922786_3    conda-forge
+libgfortran5              13.2.0               hf226fd6_3    conda-forge
+liblapack                 3.9.0           26_osxarm64_openblas    conda-forge
+liblzma                   5.6.3                h39f12f2_1    conda-forge
+libmpdec                  4.0.0                h99b78c6_0    conda-forge
+libopenblas               0.3.28          openmp_hf332438_1    conda-forge
+libsqlite                 3.48.0               h3f77e49_1    conda-forge
+libzlib                   1.3.1                h8359307_2    conda-forge
+llvm-openmp               19.1.7               hdb05f8b_0    conda-forge
+ncurses                   6.5                  h5e97a16_2    conda-forge
+numpy                     2.2.2           py313h41a2e72_0    conda-forge
+openssl                   3.4.0                h81ee809_1    conda-forge
+pandas                    2.2.3           py313h47b39a6_1    conda-forge
+pip                       24.3.1             pyh145f28c_2    conda-forge
+python                    3.13.1          h4f43103_105_cp313    conda-forge
+python-dateutil           2.9.0.post0        pyhff2d567_1    conda-forge
+python-tzdata             2025.1             pyhd8ed1ab_0    conda-forge
+python_abi                3.13                    5_cp313    conda-forge
+pytz                      2024.1             pyhd8ed1ab_0    conda-forge
+readline                  8.2                  h92ec313_1    conda-forge
+six                       1.17.0             pyhd8ed1ab_0    conda-forge
+tk                        8.6.13               h5083fa2_1    conda-forge
+tzdata                    2025a                h78e105d_0    conda-forge
+12:56:41 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda env export
+name: my_env
+channels:
+  - conda-forge
+dependencies:
+  - bzip2=1.0.8=h99b78c6_7
+  - ca-certificates=2024.12.14=hf0a4a13_0
+  - libblas=3.9.0=26_osxarm64_openblas
+  - libcblas=3.9.0=26_osxarm64_openblas
+  - libcxx=19.1.7=ha82da77_0
+  - libexpat=2.6.4=h286801f_0
+  - libffi=3.4.2=h3422bc3_5
+  - libgfortran=5.0.0=13_2_0_hd922786_3
+  - libgfortran5=13.2.0=hf226fd6_3
+  - liblapack=3.9.0=26_osxarm64_openblas
+  - liblzma=5.6.3=h39f12f2_1
+  - libmpdec=4.0.0=h99b78c6_0
+  - libopenblas=0.3.28=openmp_hf332438_1
+  - libsqlite=3.48.0=h3f77e49_1
+  - libzlib=1.3.1=h8359307_2
+  - llvm-openmp=19.1.7=hdb05f8b_0
+  - ncurses=6.5=h5e97a16_2
+  - numpy=2.2.2=py313h41a2e72_0
+  - openssl=3.4.0=h81ee809_1
+  - pandas=2.2.3=py313h47b39a6_1
+  - pip=24.3.1=pyh145f28c_2
+  - python=3.13.1=h4f43103_105_cp313
+  - python-dateutil=2.9.0.post0=pyhff2d567_1
+  - python-tzdata=2025.1=pyhd8ed1ab_0
+  - python_abi=3.13=5_cp313
+  - pytz=2024.1=pyhd8ed1ab_0
+  - readline=8.2=h92ec313_1
+  - six=1.17.0=pyhd8ed1ab_0
+  - tk=8.6.13=h5083fa2_1
+  - tzdata=2025a=h78e105d_0
+prefix: /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+12:59:08 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python
+Python 3.13.1 | packaged by conda-forge | (main, Jan 13 2025, 09:45:31) [Clang 18.1.8 ] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+12:59:32 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda env export -f environment.yml
+name: my_env
+channels:
+  - conda-forge
+dependencies:
+  - bzip2=1.0.8=h99b78c6_7
+  - ca-certificates=2024.12.14=hf0a4a13_0
+  - libblas=3.9.0=26_osxarm64_openblas
+  - libcblas=3.9.0=26_osxarm64_openblas
+  - libcxx=19.1.7=ha82da77_0
+  - libexpat=2.6.4=h286801f_0
+  - libffi=3.4.2=h3422bc3_5
+  - libgfortran=5.0.0=13_2_0_hd922786_3
+  - libgfortran5=13.2.0=hf226fd6_3
+  - liblapack=3.9.0=26_osxarm64_openblas
+  - liblzma=5.6.3=h39f12f2_1
+  - libmpdec=4.0.0=h99b78c6_0
+  - libopenblas=0.3.28=openmp_hf332438_1
+  - libsqlite=3.48.0=h3f77e49_1
+  - libzlib=1.3.1=h8359307_2
+  - llvm-openmp=19.1.7=hdb05f8b_0
+  - ncurses=6.5=h5e97a16_2
+  - numpy=2.2.2=py313h41a2e72_0
+  - openssl=3.4.0=h81ee809_1
+  - pandas=2.2.3=py313h47b39a6_1
+  - pip=24.3.1=pyh145f28c_2
+  - python=3.13.1=h4f43103_105_cp313
+  - python-dateutil=2.9.0.post0=pyhff2d567_1
+  - python-tzdata=2025.1=pyhd8ed1ab_0
+  - python_abi=3.13=5_cp313
+  - pytz=2024.1=pyhd8ed1ab_0
+  - readline=8.2=h92ec313_1
+  - six=1.17.0=pyhd8ed1ab_0
+  - tk=8.6.13=h5083fa2_1
+  - tzdata=2025a=h78e105d_0
+prefix: /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+13:00:47 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ code .
+13:00:53 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda env export -f environment.yml
+name: my_env
+channels:
+  - conda-forge
+dependencies:
+  - bzip2=1.0.8=h99b78c6_7
+  - ca-certificates=2024.12.14=hf0a4a13_0
+  - libblas=3.9.0=26_osxarm64_openblas
+  - libcblas=3.9.0=26_osxarm64_openblas
+  - libcxx=19.1.7=ha82da77_0
+  - libexpat=2.6.4=h286801f_0
+  - libffi=3.4.2=h3422bc3_5
+  - libgfortran=5.0.0=13_2_0_hd922786_3
+  - libgfortran5=13.2.0=hf226fd6_3
+  - liblapack=3.9.0=26_osxarm64_openblas
+  - liblzma=5.6.3=h39f12f2_1
+  - libmpdec=4.0.0=h99b78c6_0
+  - libopenblas=0.3.28=openmp_hf332438_1
+  - libsqlite=3.48.0=h3f77e49_1
+  - libzlib=1.3.1=h8359307_2
+  - llvm-openmp=19.1.7=hdb05f8b_0
+  - ncurses=6.5=h5e97a16_2
+  - numpy=2.2.2=py313h41a2e72_0
+  - openssl=3.4.0=h81ee809_1
+  - pandas=2.2.3=py313h47b39a6_1
+  - pip=24.3.1=pyh145f28c_2
+  - python=3.13.1=h4f43103_105_cp313
+  - python-dateutil=2.9.0.post0=pyhff2d567_1
+  - python-tzdata=2025.1=pyhd8ed1ab_0
+  - python_abi=3.13=5_cp313
+  - pytz=2024.1=pyhd8ed1ab_0
+  - readline=8.2=h92ec313_1
+  - six=1.17.0=pyhd8ed1ab_0
+  - tk=8.6.13=h5083fa2_1
+  - tzdata=2025a=h78e105d_0
+prefix: /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+13:07:30 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda env export --from-history -f environment_history.yml
+name: my_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pandas
+prefix: /Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env
+13:09:26 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda env export --from-history -f environment_history.yml
+13:12:51 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$
+13:12:52 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$
+13:12:52 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ which python
+/Users/danielchen/.pyenv/versions/miniforge3-latest/envs/my_env/bin/python
+13:12:57 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ open /Users/danielchen/.pyenv/versions/
+13:13:33 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda deactivate
+13:15:30 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda info
+
+     active environment : base
+    active env location : /Users/danielchen/.pyenv/versions/miniforge3-latest
+            shell level : 1
+       user config file : /Users/danielchen/.condarc
+ populated config files : /Users/danielchen/.pyenv/versions/miniforge3-latest/.condarc
+                          /Users/danielchen/.condarc
+          conda version : 25.1.0
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=m1
+                          __conda=25.1.0=0
+                          __osx=15.2=0
+                          __unix=0=0
+       base environment : /Users/danielchen/.pyenv/versions/miniforge3-latest  (writable)
+      conda av data dir : /Users/danielchen/.pyenv/versions/miniforge3-latest/etc/conda
+  conda av metadata url : None
+           channel URLs : https://conda.anaconda.org/conda-forge/osx-arm64
+                          https://conda.anaconda.org/conda-forge/noarch
+          package cache : /Users/danielchen/.pyenv/versions/miniforge3-latest/pkgs
+                          /Users/danielchen/.conda/pkgs
+       envs directories : /Users/danielchen/.pyenv/versions/miniforge3-latest/envs
+                          /Users/danielchen/.conda/envs
+               platform : osx-arm64
+             user-agent : conda/25.1.0 requests/2.32.3 CPython/3.12.7 Darwin/24.2.0 OSX/15.2 solver/libmamba conda-libmamba-solver/25.1.0 libmambapy/2.0.5
+                UID:GID : 501:20
+             netrc file : None
+           offline mode : False
+
+13:15:34 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda env create --file environment_history.yml
+Channels:
+ - conda-forge
+Platform: osx-arm64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate my_env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+13:16:41 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ conda activate my_env
+13:17:49 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ python
+Python 3.13.1 | packaged by conda-forge | (main, Jan 13 2025, 09:45:31) [Clang 18.1.8 ] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> exit()
+13:26:53 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$
+13:28:06 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git stauts
+git: 'stauts' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+13:29:13 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	environment.yml
+	environment_history.yml
+
+nothing added to commit but untracked files present (use "git add" to track)
+13:29:15 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git add .
+13:29:17 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git commit -m "conda environments"
+[main b97b8ef] conda environments
+ 2 files changed, 42 insertions(+)
+ create mode 100644 environment.yml
+ create mode 100644 environment_history.yml
+13:29:22 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git push origin main
+Enter passphrase for key '/Users/danielchen/.ssh/id_rsa':
+Enter passphrase for key '/Users/danielchen/.ssh/id_rsa':
+Received disconnect from 140.82.114.4 port 22:11: Bye Bye
+Disconnected from 140.82.114.4 port 22
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+13:31:34 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$
+13:31:35 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git stauts
+git: 'stauts' is not a git command. See 'git --help'.
+
+The most similar command is
+	status
+13:31:36 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$
+
+
+
+
+
+
+
+
+
+
+
+13:31:37 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	2025-01-23-virtual_environments.Rproj
+
+no changes added to commit (use "git add" and/or "git commit -a")
+13:31:39 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git diff
+diff --git a/.gitignore b/.gitignore
+index 15201ac..858c8ae 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -169,3 +169,4 @@ cython_debug/
+
+ # PyPI configuration file
+ .pypirc
++.Rproj.user
+13:31:53 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$
+13:39:48 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.Rprofile
+	2025-01-23-virtual_environments.Rproj
+	renv.lock
+	renv/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+13:39:51 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.Rprofile
+	2025-01-23-virtual_environments.Rproj
+	renv.lock
+	renv/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+git add .
+git status
+git commit -m "renv example"
+13:51:01 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git add .
+13:51:07 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .Rprofile
+	modified:   .gitignore
+	new file:   2025-01-23-virtual_environments.Rproj
+	new file:   renv.lock
+	new file:   renv/.gitignore
+	new file:   renv/activate.R
+	new file:   renv/settings.json
+
+13:51:09 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git commit -m "renv example"
+[main 7270929] renv example
+ 7 files changed, 1373 insertions(+)
+ create mode 100644 .Rprofile
+ create mode 100644 2025-01-23-virtual_environments.Rproj
+ create mode 100644 renv.lock
+ create mode 100644 renv/.gitignore
+ create mode 100644 renv/activate.R
+14:46:21 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+16:28:12 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ git push origin main
+Enter passphrase for key '/Users/danielchen/.ssh/id_rsa':
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (14/14), 12.58 KiB | 4.19 MiB/s, done.
+Total 14 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To github.com:chendaniely/2025-01-23-virtual_environments.git
+   993441d..7270929  main -> main
+16:28:21 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ ls
+2025-01-23-virtual_environments.Rproj
+LICENSE
+README.md
+environment.yml
+environment_history.yml
+renv
+renv.lock
+16:28:25 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
+danielchen@dhcp-128-189-142-254$ history > history-terminal.txt
+16:28:40 (miniforge3-latest) (main) ~/git/2025-01-23-virtual_environments
